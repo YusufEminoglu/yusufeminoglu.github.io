@@ -3,64 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yusuf Eminoğlu · Geospatial AI, Spatial Optimization &amp; Open-Source Ecosystems</title>
-<meta name="description" content="Academic researcher in Computational Urban Science, developer of 8 Pure-Python Spatial SDKs and 24 QGIS Plugins.">
+<title>Yusuf Eminoğlu · Geospatial AI, Spatial Optimization & Open-Source Ecosystems</title>
+<meta name="description" content="Academic researcher in Computational Urban Science, developer of 8 Pure-Python Spatial SDKs, 24 QGIS Plugins, and interactive spatial AI studios.">
+<meta name="keywords" content="Yusuf Eminoğlu, geospatial, Python, PyPI, GIS, GeoAI, spatial statistics, urban planning, QGIS, Three.js, OpenStreetMap, Netcad">
+<meta name="author" content="Yusuf Eminoğlu">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <style>
 :root {
   --bg: #050d15;
+  --bg-surface: #0a1826;
   --bg-card: #0d2033;
+  --bg-card-hover: #122b45;
   --border: #1a3854;
   --fg: #e2e8f0;
   --fg-heading: #ffffff;
+  --muted: #8da2b5;
   --accent: #10b981;
   --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
   --accent-purple: #a855f7;
+  --accent-amber: #f59e0b;
+  --accent-rose: #f43f5e;
+  --gradient-brand: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
 }
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--fg);
   line-height: 1.6;
-  padding: 4rem 1.5rem;
+  padding: 3rem 1.5rem 5rem;
   display: flex;
   justify-content: center;
 }
 .container {
-  max-width: 900px;
+  max-width: 1100px;
   width: 100%;
 }
+
 .hero {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  margin-bottom: 1.2rem;
+}
+.hero-badge .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
 }
 h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 800;
   color: var(--fg-heading);
   letter-spacing: -0.03em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, #ffffff 0%, #93c5fd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 p.sub {
-  color: #8da2b5;
+  color: var(--muted);
   font-size: 1.15rem;
-  margin-bottom: 1.5rem;
+  max-width: 760px;
+  margin: 0 auto 1.5rem;
 }
-.grid {
+
+.metrics-bar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 3.5rem;
 }
-.card {
+.metric-pill {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+}
+.metric-num {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+}
+.metric-lbl {
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-top: 0.2rem;
+}
+
+.section-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--fg-heading);
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.grid-featured {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+.card-featured {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 1.8rem;
+  padding: 2rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card-featured:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 12px 36px rgba(6, 182, 212, 0.25);
+  background: var(--bg-card-hover);
+}
+.card-featured .title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--fg-heading);
+  margin-bottom: 0.6rem;
+}
+.card-featured .desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.card-featured .badge {
+  display: inline-block;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  align-self: flex-start;
+}
+
+/* 8 SDKs Grid */
+.sdks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3.5rem;
+}
+.sdk-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
@@ -68,60 +193,262 @@ p.sub {
   flex-direction: column;
   justify-content: space-between;
 }
-.card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent-cyan);
-  box-shadow: 0 10px 30px rgba(6, 182, 212, 0.2);
+.sdk-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-emerald);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+  background: var(--bg-card-hover);
 }
-.card-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--fg-heading);
+.sdk-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
 }
-.card-desc {
-  font-size: 0.9rem;
-  color: #8da2b5;
-  margin-bottom: 1.2rem;
-}
-.card-badge {
-  display: inline-block;
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
+.sdk-name {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.05rem;
   font-weight: 700;
-  background: rgba(16, 185, 129, 0.15);
+  color: var(--accent-cyan);
+}
+.sdk-ver {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.4);
+}
+.sdk-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+.sdk-links {
+  display: flex;
+  gap: 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
   color: var(--accent);
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  align-self: flex-start;
+}
+
+footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+footer a {
+  color: var(--accent-cyan);
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
 }
 </style>
 </head>
 <body>
 <div class="container">
   <div class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      <span>8 Pure-Python SDKs · 801 Passing Tests · Active Production Release</span>
+    </div>
     <h1>Yusuf Eminoğlu</h1>
-    <p class="sub">Computational Urban Science &middot; Spatial Optimization &middot; GeoAI &middot; Dokuz Eylül University</p>
+    <p class="sub">Computational Urban Science · Spatial Optimization · GeoAI · Dokuz Eylül University</p>
   </div>
 
-  <div class="grid">
-    <a href="/python-sdk-governance/" class="card" style="border-color:rgba(16,185,129,0.4);">
+  <div class="metrics-bar">
+    <div class="metric-pill">
+      <div class="metric-num">8</div>
+      <div class="metric-lbl">PyPI Spatial SDKs</div>
+    </div>
+    <div class="metric-pill">
+      <div class="metric-num">801</div>
+      <div class="metric-lbl">Passing Unit Tests</div>
+    </div>
+    <div class="metric-pill">
+      <div class="metric-num">100%</div>
+      <div class="metric-lbl">Pure-Python Zero C/C++</div>
+    </div>
+    <div class="metric-pill">
+      <div class="metric-num">24</div>
+      <div class="metric-lbl">QGIS Plugins</div>
+    </div>
+  </div>
+
+  <div class="section-title">
+    <span>🚀 Master Intelligence Studios & Portals</span>
+  </div>
+
+  <div class="grid-featured">
+    <a href="./python-sdk-governance/" class="card-featured" style="border-color: rgba(16, 185, 129, 0.4);">
       <div>
-        <div class="card-title" style="color:var(--accent);">🐍 Python Spatial SDK Hub</div>
-        <div class="card-desc">Master governance, econometric forecasting, live telemetry, and interactive REPL studio for 8 pure-Python spatial intelligence SDKs.</div>
+        <div class="title" style="color: var(--accent);">🐍 Python Spatial SDK Hub</div>
+        <div class="desc">Master governance, econometric forecasting, live telemetry, and interactive REPL studio for 8 pure-Python spatial intelligence SDKs.</div>
       </div>
-      <span class="card-badge">8 Python Packages &middot; Live Studio</span>
+      <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent); border: 1px solid rgba(16, 185, 129, 0.3);">
+        8 Python Packages · Live Studio
+      </span>
     </a>
 
-    <a href="/qgis-plugins-governance/" class="card" style="border-color:rgba(6,182,212,0.4);">
+    <a href="./playground/" class="card-featured" style="border-color: rgba(56, 189, 248, 0.4);">
       <div>
-        <div class="card-title" style="color:var(--accent-cyan);">🗺️ QGIS Plugin Governance Hub</div>
-        <div class="card-desc">Portfolio analytics, global geographic reach, and forensic quality surveillance studio for 24 QGIS plugins.</div>
+        <div class="title" style="color: var(--accent-cyan);">🌍 UrbanGIS AI Studio (Playground)</div>
+        <div class="desc">Interactive multi-layer simulation playground combining Leaflet, 3D Three.js WebGL, EV queues, Bishop slope stability, and real-time GIS analytics.</div>
       </div>
-      <span class="card-badge" style="background:rgba(6,182,212,0.15);color:var(--accent-cyan);border-color:rgba(6,182,212,0.3);">24 QGIS Plugins &middot; Live Studio</span>
+      <span class="badge" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); border: 1px solid rgba(6, 182, 212, 0.3);">
+        Unified Web Playground · Live Maps
+      </span>
+    </a>
+
+    <a href="./qgis-plugins-governance/" class="card-featured" style="border-color: rgba(168, 85, 247, 0.4);">
+      <div>
+        <div class="title" style="color: var(--accent-purple);">🗺️ QGIS Plugin Governance Hub</div>
+        <div class="desc">Portfolio analytics, global geographic reach, and forensic quality surveillance studio for 24 open-source QGIS plugins.</div>
+      </div>
+      <span class="badge" style="background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); border: 1px solid rgba(168, 85, 247, 0.3);">
+        24 QGIS Plugins · Live Studio
+      </span>
     </a>
   </div>
+
+  <div class="section-title">
+    <span>📦 8 Pure-Python Spatial Intelligence Packages (Round 11)</span>
+  </div>
+
+  <div class="sdks-grid">
+    <!-- 1. NCZ2Geo -->
+    <a href="https://github.com/YusufEminoglu/NCZ2Geo" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">NCZ2Geo</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">Netcad NCZ/NCA parser, PlanGML converter, 3D Cadastral Strata slicer & GeoPackage R-Tree optimizer.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · GPL-2.0</span>
+        <span>37 Tests</span>
+      </div>
+    </a>
+
+    <!-- 2. cad2geo -->
+    <a href="https://github.com/YusufEminoglu/cad2geo" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">cad2geo</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">CAD to GIS GeoJSON converter, Bishop embankment slope stability, AASHTO pavement SN & CRTN traffic noise.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · GPL-2.0</span>
+        <span>39 Tests</span>
+      </div>
+    </a>
+
+    <!-- 3. geoai2analytics -->
+    <a href="https://github.com/YusufEminoglu/geoai2analytics-sdk" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">geoai2analytics</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">Spatial econometrics, Spatio-Temporal Product-Sum Kriging, ST Graph Diffusion & Spatial Isolation Forests.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · MIT</span>
+        <span>39 Tests</span>
+      </div>
+    </a>
+
+    <!-- 4. multilayer -->
+    <a href="https://github.com/YusufEminoglu/multilayer-sdk" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">multilayer</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">Synchronized multi-panel map visualization, proximity matrix heatmap grids & animated pulse radar beacons.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · MIT</span>
+        <span>30 Tests</span>
+      </div>
+    </a>
+
+    <!-- 5. myface2city -->
+    <a href="https://github.com/YusufEminoglu/MyFace2City" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">myface2city</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">Algorithmic urban portrait art, CMYK angled halftone rosette screens & Japanese Suminagashi water marbling.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · MIT</span>
+        <span>29 Tests</span>
+      </div>
+    </a>
+
+    <!-- 6. osm2threejs -->
+    <a href="https://github.com/YusufEminoglu/osm2threejs" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">osm2threejs</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">3D city & WebGL Three.js generator, ICAO rooftop helipad lighting & nautical marina docks/breakwaters.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · MIT</span>
+        <span>29 Tests</span>
+      </div>
+    </a>
+
+    <!-- 7. planx -->
+    <a href="https://github.com/YusufEminoglu/planx_sdk" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">planx</span>
+          <span class="sdk-ver">v2.27.0</span>
+        </div>
+        <div class="sdk-desc">Urban resilience, M/M/c/K EV fast-charging queues, FEMA HAZUS seismic building damage & betterment levies.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · MIT</span>
+        <span>523 Tests</span>
+      </div>
+    </a>
+
+    <!-- 8. zero2route3d -->
+    <a href="https://github.com/YusufEminoglu/zero2route3d_sdk" target="_blank" class="sdk-card">
+      <div>
+        <div class="sdk-header">
+          <span class="sdk-name">zero2route3d</span>
+          <span class="sdk-ver">v0.12.0</span>
+        </div>
+        <div class="sdk-desc">3D kinematic routing, alpine ski resort piste gradient classifier & coastal hydrofoil marine transit simulation.</div>
+      </div>
+      <div class="sdk-links">
+        <span>PyPI · MIT</span>
+        <span>75 Tests</span>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Yusuf Eminoğlu · Pure-Python Spatial Intelligence Ecosystem · <a href="https://github.com/YusufEminoglu" target="_blank">GitHub Profile</a> · <a href="https://pypi.org/user/yusufeminoglu/" target="_blank">PyPI Publisher</a></p>
+  </footer>
 </div>
+
+<script>
+  lucide.createIcons();
+</script>
 </body>
 </html>
