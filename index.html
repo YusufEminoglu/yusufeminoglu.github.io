@@ -234,6 +234,37 @@ p.sub {
   color: var(--accent);
 }
 
+.doi-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 0.6rem;
+  margin-bottom: 3.5rem;
+}
+.doi-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.82rem;
+}
+.doi-item .sdk-name {
+  font-size: 0.9rem;
+}
+.doi-item a {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--accent);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.doi-item a:hover {
+  text-decoration: underline;
+}
+
 footer {
   text-align: center;
   padding-top: 2rem;
@@ -440,6 +471,20 @@ footer a:hover {
         <span>75 Tests</span>
       </div>
     </a>
+  </div>
+
+  <div class="section-title">
+    <span>📚 Cite the SDKs · Zenodo DOIs</span>
+  </div>
+  <div class="doi-list">
+    <div class="doi-item"><span class="sdk-name">NCZ2Geo</span><a href="https://doi.org/10.5281/zenodo.23677241" target="_blank" rel="noopener">10.5281/zenodo.23677241</a></div>
+    <div class="doi-item"><span class="sdk-name">cad2geo</span><a href="https://doi.org/10.5281/zenodo.23677239" target="_blank" rel="noopener">10.5281/zenodo.23677239</a></div>
+    <div class="doi-item"><span class="sdk-name">geoai2analytics-sdk</span><a href="https://doi.org/10.5281/zenodo.23677244" target="_blank" rel="noopener">10.5281/zenodo.23677244</a></div>
+    <div class="doi-item"><span class="sdk-name">multilayer-sdk</span><a href="https://doi.org/10.5281/zenodo.23677246" target="_blank" rel="noopener">10.5281/zenodo.23677246</a></div>
+    <div class="doi-item"><span class="sdk-name">myface2city</span><a href="https://doi.org/10.5281/zenodo.23677249" target="_blank" rel="noopener">10.5281/zenodo.23677249</a></div>
+    <div class="doi-item"><span class="sdk-name">osm2threejs</span><a href="https://doi.org/10.5281/zenodo.23677253" target="_blank" rel="noopener">10.5281/zenodo.23677253</a></div>
+    <div class="doi-item"><span class="sdk-name">planx-sdk</span><a href="https://doi.org/10.5281/zenodo.20753169" target="_blank" rel="noopener">10.5281/zenodo.20753169</a></div>
+    <div class="doi-item"><span class="sdk-name">zero2route3d-sdk</span><a href="https://doi.org/10.5281/zenodo.23677255" target="_blank" rel="noopener">10.5281/zenodo.23677255</a></div>
   </div>
 
   <footer>
